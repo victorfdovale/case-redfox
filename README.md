@@ -1,3 +1,5 @@
 # case-redfox
 
-deploy no heroku : https://case-redfox-labenu.herokuapp.com/
+Deploy no heroku : https://case-redfox-labenu.herokuapp.com/
+
+Documentação da API : https://documenter.getpostman.com/view/18386367/Uyr4JKSA
