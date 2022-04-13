@@ -1,4 +1,12 @@
 import app from './app'
+import { PokemonBusiness } from './business/PokemonBusiness'
+import { PokemonController } from './controller/PokemonController'
+import { PokemonDataBase } from './data/PokemonDataBase'
 
-app.get('/')
+const pokemonController = new PokemonController(
+    new PokemonBusiness(new PokemonDataBase()),   
+)
 
+app.get('/pokemons', pokemonController.getAllPokemons)
+app.get('/pokemon/:name', pokemonController.getPokemonByname)
+app.get('/pokemon/:id', pokemonController.getPokemonById)
