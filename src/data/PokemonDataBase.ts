@@ -15,21 +15,21 @@ export class PokemonDataBase extends BaseDatabase {
         }
     }
 
-    getById = async(id: string) => {
+    getByName = async(name: string) => {
         try {
-            const result = await BaseDatabase.connection.raw(`
-                SELECT * FROM Pokemon WHERE id = "${id}";
+            const result: Pokemon[] = await BaseDatabase.connection.raw(`
+                SELECT * FROM Pokemon WHERE name = "${name}";
             `)
             return result[0]
         } catch (error: any) {
-            throw new Error(error.sqlMessage)
+            throw new Error (error.sqlMessage)
         }
     }
 
-    getByName = async(name: string) => {
+    getById = async(id: string) => {
         try {
-            const result = await BaseDatabase.connection.raw(`
-                SELECT * FROM Pokemon WHERE name = "${name}";
+            const result: Pokemon[] = await BaseDatabase.connection.raw(`
+                SELECT * FROM Pokemon WHERE id = "${id}";
             `)
             return result[0]
         } catch (error: any) {

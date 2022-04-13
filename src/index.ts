@@ -8,5 +8,5 @@ const pokemonController = new PokemonController(
 )
 
 app.get('/pokemons', pokemonController.getAllPokemons)
-app.get('/pokemon/:name', pokemonController.getPokemonByname)
-app.get('/pokemon/:id', pokemonController.getPokemonById)
+app.get('/pokemon/name/:name', pokemonController.getPokemonByname)
+app.get('/pokemon/id/:id', pokemonController.getPokemonById)
